@@ -1,0 +1,70 @@
+<!doctype html>
+<html  class="no-js">
+
+<head >
+  <meta charset="utf-8">
+  <title>
+    <%= title %>
+  </title>
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <style>
+    html, body {
+      font-size: 40px;
+      line-height: 100px;
+      height: 100%;
+      width: 100%;
+    }
+    .header {
+    height: 100px;
+    width: 100%;
+    background: red;
+    text-align: center;
+}
+.wrap {
+    height: 100%;
+    width: 100%;
+    background: blue;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+    font-size: 14px;
+}
+#sidebar {
+    line-height: 500px;
+    text-align: center;
+    color: #000;
+    float: left;
+    background: yellow;
+    width: 240px;
+    height: 100%;
+}
+.wrap .sidebar-list {
+    line-height: 60px;
+}
+  </style>
+ 
+</head>
+
+<body>
+  <div class="header">
+    <%= header %>
+  </div>
+  <div class="wrap">
+    <div id="sidebar">loading......</div>
+    <div id="center">loading......</div>
+  </div>
+  <script
+  src="http://code.jquery.com/jquery-3.3.1.slim.js"></script>
+  <script src="/bigpipe.js"></script>
+  <script>
+    var bigpipe = new Bigpipe();
+    bigpipe.ready('pagelet1', function (data) {
+      $("#sidebar").html(data);
+    })
+    bigpipe.ready('pagelet2', function (data) {
+      $("#center").html(data);
+    })
+  </script>
+</body>
+
+</html>
